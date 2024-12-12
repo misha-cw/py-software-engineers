@@ -13,7 +13,7 @@ class FrontendMixin:
         return "<h1>Hello world</h1>"
 
 
-class BeckendMixin:
+class BackendMixin:
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
@@ -25,7 +25,7 @@ class FrontendDeveloper(FrontendMixin, SoftwareEngineer):
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
 
-class BackendDeveloper(BeckendMixin, SoftwareEngineer):
+class BackendDeveloper(BackendMixin, SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
@@ -41,7 +41,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BeckendMixin, FrontendMixin, SoftwareEngineer):
+class FullStackDeveloper(BackendMixin, FrontendMixin, SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend([
